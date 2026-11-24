@@ -43,6 +43,21 @@ xMark 是一个轻量的 VS Code Markdown 预览扩展。它使用 [`markdown-it
 :::
 ```
 
+可打开 [xMark Markdown 支持范围 Demo](examples/markdown-plugins-demo.md)，在预览中查看当前支持的语法、扩展语法和控件示例。
+
+脚注和定义列表也可用于补充说明：
+
+```markdown
+这是正文中的脚注引用[^detail]。
+
+[^detail]: 脚注内容支持 **Markdown 格式**。
+
+术语
+: 术语解释可以包含 _强调_ 等 Markdown 格式。
+```
+
+脚注会在文末生成可跳转的注释列表；定义列表使用术语行和以冒号开头的解释行。两者的样式适用于 Bill 和 GitHub 的浅色、深色预览主题。
+
 GitHub Alerts 使用 `> [!NOTE]`、`> [!TIP]`、`> [!IMPORTANT]`、`> [!WARNING]` 和 `> [!CAUTION]` 语法。任务列表的复选框默认为只读。
 
 相对路径图片会按源 Markdown 文件所在目录解析。点击链接时，HTTP、HTTPS 和邮件链接交由系统默认应用打开；本地文件及 VS Code Remote 链接交由 VS Code 打开。

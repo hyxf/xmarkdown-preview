@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "ES2020",
+    "types": ["node"],
     "noUnusedLocals": true,
     "sourceMap": true,
     "outDir": "out",

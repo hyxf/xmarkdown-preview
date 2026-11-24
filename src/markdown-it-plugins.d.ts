@@ -31,3 +31,17 @@ declare module 'markdown-it-task-lists' {
   const taskLists: (markdown: MarkdownIt, options?: TaskListOptions) => void;
   export default taskLists;
 }
+
+declare module 'markdown-it-footnote' {
+  import type { MarkdownIt } from 'markdown-it';
+
+  const footnote: (markdown: MarkdownIt) => void;
+  export default footnote;
+}
+
+declare module 'markdown-it-deflist' {
+  import type { MarkdownIt } from 'markdown-it';
+
+  const deflist: (markdown: MarkdownIt) => void;
+  export default deflist;
+}

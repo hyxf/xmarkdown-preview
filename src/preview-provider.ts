@@ -4,7 +4,9 @@ import { randomUUID } from 'node:crypto';
 import hljs from 'highlight.js/lib/core';
 import * as vscode from 'vscode';
 import markdownItContainer from 'markdown-it-container';
+import markdownItDeflist from 'markdown-it-deflist';
 import { full as markdownItEmoji } from 'markdown-it-emoji';
+import markdownItFootnote from 'markdown-it-footnote';
 import markdownItGitHubAlerts from 'markdown-it-github-alerts';
 import markdownItTaskLists from 'markdown-it-task-lists';
 import bash from 'highlight.js/lib/languages/bash';
@@ -429,6 +431,8 @@ export default class PreviewProvider implements vscode.WebviewViewProvider {
       .use(markdownItEmoji)
       .use(markdownItTaskLists, { enabled: false })
       .use(markdownItGitHubAlerts)
+      .use(markdownItFootnote)
+      .use(markdownItDeflist)
       .use(markdownItContainer, 'info', this.containerOptions('info'))
       .use(markdownItContainer, 'note', this.containerOptions('note'))
       .use(markdownItContainer, 'tip', this.containerOptions('tip'))

@@ -230,7 +230,9 @@
     "highlight.js": "^11.12.0",
     "markdown-it": "^15.0.3",
     "markdown-it-container": "^4.0.0",
+    "markdown-it-deflist": "^4.0.0",
     "markdown-it-emoji": "^3.1.0",
+    "markdown-it-footnote": "^4.0.0",
     "markdown-it-github-alerts": "^1.0.1",
     "markdown-it-task-lists": "^2.1.1",
     "semver": "^7.8.6"
