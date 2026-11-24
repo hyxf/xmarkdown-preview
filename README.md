@@ -63,25 +63,3 @@ GitHub Alerts 使用 `> [!NOTE]`、`> [!TIP]`、`> [!IMPORTANT]`、`> [!WARNING]
 相对路径图片会按源 Markdown 文件所在目录解析。点击链接时，HTTP、HTTPS 和邮件链接交由系统默认应用打开；本地文件及 VS Code Remote 链接交由 VS Code 打开。
 
 Markdown 内容由 `markdown-it` 渲染。预览界面交互由 xMark 自己实现；Markdown 预览主题使用 Bill 和 GitHub 样式资源，代码高亮由 highlight.js 生成，代码主题使用随扩展打包的 highlight.js 主题。本扩展不包含 Crossnote 的 Markdown 渲染运行时、数学公式、图表、导出、笔记本或 Wiki 链接功能。
-
-## 第三方资源许可
-
-`media/preview_theme/` 中保留的 GitHub 预览主题样式源自 Crossnote，适用 University of Illinois/NCSA Open Source License：
-
-```text
-University of Illinois/NCSA
-Open Source License
-
-Copyright (c) 2017 ~ 2023  Yiyi Wang
-All rights reserved.
-
-Developed by:     Yiyi Wang
-                  https://github.com/shd101wyy/crossnote
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.
-Neither the names of Yiyi Wang, nor the names of its contributors may be used to endorse or promote products derived from this Software without specific prior written permission.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE.
-```
