@@ -27,10 +27,10 @@
     "package:extension": "mkdir -p dist && pnpm dlx @vscode/vsce package --no-dependencies --out dist/xmark-preview-$npm_package_version.vsix",
     "check:all": "pnpm check:eslint && pnpm check:prettier && pnpm check:tsc",
     "check:eslint": "eslint \"**/*\"",
-    "check:prettier": "prettier --check \"**/*.*\"",
+    "check:prettier": "prettier --check \"src/**/*.{ts,js}\" \"scripts/**/*.js\" \"media/webview/**/*.{js,css,html}\" package.json tsconfig.json \".github/workflows/*.yml\"",
     "fix:all": "pnpm fix:eslint && pnpm fix:prettier",
     "fix:eslint": "eslint --fix \"**/*\"",
-    "fix:prettier": "prettier --write \"**/*.*\"",
+    "fix:prettier": "prettier --write \"src/**/*.{ts,js}\" \"scripts/**/*.js\" \"media/webview/**/*.{js,css,html}\" package.json tsconfig.json \".github/workflows/*.yml\"",
     "vscode:prepublish": "pnpm build",
     "watch": "node scripts/build.js --watch",
     "check:tsc": "tsc --noEmit"
