@@ -43,7 +43,7 @@
 
 相对路径图片会从源文档所在目录解析：
 
-![xMark 扩展图标](assets/mpe.png)
+![xMark 扩展图标](../media/mpe.png)
 
 ## 表格
 
@@ -68,6 +68,8 @@ printf 'xMark preview demo\n'
 ```
 
 ## Emoji
+
+![xMark Emoji 示例图片](../media/mpe.png)
 
 | 短代码       | 预览效果   |
 | ------------ | ---------- |
