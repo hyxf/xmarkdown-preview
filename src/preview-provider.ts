@@ -150,7 +150,7 @@ export default class PreviewProvider implements vscode.WebviewViewProvider {
     );
     void this.cleanupStaleRunScripts();
     this.previewTheme = this.safeThemeName(
-      context.globalState.get('previewTheme', 'github-light.css'),
+      context.globalState.get('previewTheme', 'bill-light.css'),
       'preview',
     );
     this.executionShell = this.safeExecutionShell(
@@ -857,7 +857,7 @@ export default class PreviewProvider implements vscode.WebviewViewProvider {
     ).includes(name)
       ? name
       : type === 'preview'
-        ? 'github-light.css'
+        ? 'bill-light.css'
         : 'github.css';
   }
 

@@ -30,7 +30,7 @@
     "check:prettier": "prettier --check \"src/**/*.{ts,js}\" \"scripts/**/*.js\" \"media/webview/**/*.{js,css,html}\" package.json tsconfig.json \".github/workflows/*.yml\"",
     "fix:all": "pnpm fix:eslint && pnpm fix:prettier",
     "fix:eslint": "eslint --fix \"**/*\"",
-    "fix:prettier": "prettier --write \"src/**/*.{ts,js}\" \"scripts/**/*.js\" \"media/webview/**/*.{js,css,html}\" package.json tsconfig.json \".github/workflows/*.yml\"",
+    "format": "prettier --write \"src/**/*.{ts,js}\" \"scripts/**/*.js\" \"media/webview/**/*.{js,css,html}\" package.json tsconfig.json \".github/workflows/*.yml\"",
     "vscode:prepublish": "pnpm build",
     "watch": "node scripts/build.js --watch",
     "check:tsc": "tsc --noEmit"
