@@ -1,0 +1,230 @@
+{
+  "name": "xmark-preview",
+  "displayName": "xMark",
+  "version": "0.0.1",
+  "description": "xMark is a lightweight VS Code Markdown preview powered by markdown-it.",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "preview"
+  ],
+  "bugs": {
+    "url": "https://github.com/hyxf/xmarkdown-preview/issues"
+  },
+  "repository": "https://github.com/hyxf/xmarkdown-preview",
+  "license": "MIT",
+  "contributors": [
+    "hyxf"
+  ],
+  "publisher": "hyxf",
+  "packageManager": "pnpm@12.21.0",
+  "main": "./out/native/extension.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check:all": "pnpm check:eslint && pnpm check:prettier && pnpm check:tsc",
+    "check:eslint": "eslint \"**/*\"",
+    "check:prettier": "prettier --check \"**/*.*\"",
+    "fix:all": "pnpm fix:eslint && pnpm fix:prettier",
+    "fix:eslint": "eslint --fix \"**/*\"",
+    "fix:prettier": "prettier --write \"**/*.*\"",
+    "vscode:prepublish": "pnpm build",
+    "watch": "node scripts/build.js --watch",
+    "check:tsc": "tsc --noEmit"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-preview-bill.openPreviewToTheSide",
+        "title": "xMark: Open Preview to the Side",
+        "icon": {
+          "light": "./media/preview-right-light.svg",
+          "dark": "./media/preview-right-dark.svg"
+        }
+      },
+      {
+        "command": "markdown-preview-bill.openPreview",
+        "title": "xMark: Open Preview",
+        "icon": {
+          "light": "./media/preview-right-light.svg",
+          "dark": "./media/preview-right-dark.svg"
+        }
+      },
+      {
+        "command": "markdown-preview-bill.openPreviewInSidePanel",
+        "title": "xMark: Open Preview in Side Panel",
+        "icon": {
+          "light": "./media/side-panel-preview-light.svg",
+          "dark": "./media/side-panel-preview-dark.svg"
+        }
+      },
+      {
+        "command": "markdown-preview-bill.toggleSidePanelPreviewLock",
+        "title": "xMark: Toggle Side Panel Preview Lock"
+      },
+      {
+        "command": "markdown-preview-bill.lockSidePanelPreview",
+        "title": "xMark: Lock Side Panel Preview",
+        "icon": "$(unlock)"
+      },
+      {
+        "command": "markdown-preview-bill.unlockSidePanelPreview",
+        "title": "xMark: Unlock Side Panel Preview",
+        "icon": "$(lock)"
+      },
+      {
+        "command": "markdown-preview-bill.refreshSidePanelPreview",
+        "title": "xMark: Refresh Side Panel Preview",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "markdown-preview-bill.openSidePanelSourceInEditor",
+        "title": "xMark: Open Source File in Editor",
+        "icon": "$(go-to-file)"
+      },
+      {
+        "command": "markdown-preview-bill.popOutSidePanelPreviewToEditor",
+        "title": "xMark: Open Preview in Editor Tab",
+        "icon": "$(link-external)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "markdown-preview-bill.openPreviewToTheSide",
+        "key": "ctrl+k v",
+        "mac": "cmd+k v",
+        "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/"
+      },
+      {
+        "command": "markdown-preview-bill.openPreview",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "markdown-preview-bill.openPreviewInSidePanel",
+          "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || resourceLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "markdown-preview-bill.openPreviewInSidePanel",
+          "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/",
+          "group": "markdown-preview-bill"
+        },
+        {
+          "command": "markdown-preview-bill.openPreviewToTheSide",
+          "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/",
+          "group": "markdown-preview-bill"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "markdown-preview-bill.openPreviewToTheSide",
+          "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/",
+          "group": "navigation"
+        },
+        {
+          "command": "markdown-preview-bill.openPreviewInSidePanel",
+          "when": "resourceExtname =~ /\\.(md|markdown|mdown|mkdn|mkd|rmd|qmd|mdx)$/ || editorLangId =~ /^(markdown|quarto|prompt|instructions|chatagent|skill)$/",
+          "group": "navigation"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "markdown-preview-bill.lockSidePanelPreview",
+          "when": "view =~ /^markdown-preview-bill\\.sidePanelView$/ && !markdown-preview-bill.sidePanelLocked",
+          "group": "navigation@1"
+        },
+        {
+          "command": "markdown-preview-bill.unlockSidePanelPreview",
+          "when": "view =~ /^markdown-preview-bill\\.sidePanelView$/ && markdown-preview-bill.sidePanelLocked",
+          "group": "navigation@1"
+        },
+        {
+          "command": "markdown-preview-bill.refreshSidePanelPreview",
+          "when": "view =~ /^markdown-preview-bill\\.sidePanelView$/ && markdown-preview-bill.sidePanelHasSource",
+          "group": "navigation@2"
+        },
+        {
+          "command": "markdown-preview-bill.openSidePanelSourceInEditor",
+          "when": "view =~ /^markdown-preview-bill\\.sidePanelView$/ && markdown-preview-bill.sidePanelHasSource",
+          "group": "navigation@3"
+        },
+        {
+          "command": "markdown-preview-bill.popOutSidePanelPreviewToEditor",
+          "when": "view =~ /^markdown-preview-bill\\.sidePanelView$/ && markdown-preview-bill.sidePanelHasSource",
+          "group": "navigation@4"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "markdown-preview-bill.lockSidePanelPreview",
+          "when": "false"
+        },
+        {
+          "command": "markdown-preview-bill.unlockSidePanelPreview",
+          "when": "false"
+        },
+        {
+          "command": "markdown-preview-bill.refreshSidePanelPreview",
+          "when": "markdown-preview-bill.sidePanelHasSource"
+        },
+        {
+          "command": "markdown-preview-bill.openSidePanelSourceInEditor",
+          "when": "markdown-preview-bill.sidePanelHasSource"
+        },
+        {
+          "command": "markdown-preview-bill.popOutSidePanelPreviewToEditor",
+          "when": "markdown-preview-bill.sidePanelHasSource"
+        }
+      ]
+    },
+    "views": {
+      "markdown-preview-bill-side-panel": [
+        {
+          "type": "webview",
+          "id": "markdown-preview-bill.sidePanelView",
+          "name": "xMark Preview",
+          "icon": "media/side-panel-preview.svg"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "secondarySidebar": [
+        {
+          "id": "markdown-preview-bill-side-panel",
+          "title": "xMark Preview",
+          "icon": "media/side-panel-preview.svg"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "highlight.js": "^11.12.0",
+    "markdown-it": "^15.0.3",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-emoji": "^3.1.0",
+    "markdown-it-github-alerts": "^1.0.1",
+    "markdown-it-task-lists": "^2.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@types/node": "^25.6.0",
+    "@types/vscode": "1.82.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9",
+    "prettier": "^3",
+    "typescript": "^5.2.2",
+    "typescript-eslint": "^8"
+  },
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+  "icon": "media/mpe.png"
+}

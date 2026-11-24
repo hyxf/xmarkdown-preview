@@ -1,0 +1,11 @@
+.vscode-test
+*.vsix
+node_modules
+out
+mume
+crossnote
+.vscode-test-web
+pnpm-debug.log*
+.mimosa
+.v2c
+.video_agent

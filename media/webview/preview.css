@@ -1,0 +1,177 @@
+:root {
+  color-scheme: light dark;
+  font-family: var(--vscode-font-family, Arial, sans-serif);
+  font-size: var(--vscode-font-size, 13px);
+  color: var(--vscode-foreground, #333);
+  background: var(--vscode-editor-background, #fff);
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; min-height: 100%; margin: 0; }
+body { background: var(--vscode-editor-background, #fff); }
+button { color: inherit; font: inherit; }
+
+.xmark-toolbar {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+  width: max-content;
+  height: 40px;
+  margin-left: 0;
+  padding: 2px 8px;
+  border-radius: 0 0 0 6px;
+  background: var(--vscode-editor-background, #292929);
+}
+.xmark-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.xmark-toolbar-actions[hidden] { display: none; }
+.xmark-tool-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 2px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--vscode-foreground, #555);
+  cursor: pointer;
+}
+.xmark-tool-button:hover,
+.xmark-tool-button[aria-expanded="true"],
+.xmark-toolbar.is-expanded .xmark-toolbar-toggle {
+  background: var(--vscode-toolbar-hoverBackground, rgba(128,128,128,.18));
+  color: var(--vscode-toolbar-activeForeground, var(--vscode-foreground, #222));
+}
+.xmark-tool-button:focus-visible,
+.xmark-menu-item:focus-visible {
+  outline: 1px solid var(--vscode-focusBorder, #007fd4);
+  outline-offset: -1px;
+}
+.xmark-tool-button svg { width: 18px; height: 18px; fill: currentColor; }
+.xmark-toolbar-toggle svg { transition: transform 120ms ease-out; }
+.xmark-toolbar.is-expanded .xmark-toolbar-toggle svg { transform: rotate(180deg); }
+.xmark-menu {
+  position: fixed;
+  z-index: 50;
+  top: 44px;
+  right: 8px;
+  width: 264px;
+  padding: 4px;
+  border: 1px solid var(--vscode-menu-border, rgba(255,255,255,.08));
+  border-radius: 8px;
+  background: var(--vscode-menu-background, #252526);
+  color: var(--vscode-menu-foreground, #ccc);
+  box-shadow: 0 6px 18px rgba(0,0,0,.24), 0 1px 3px rgba(0,0,0,.16);
+}
+.xmark-menu[hidden], .xmark-submenu[hidden] { display: none; }
+.xmark-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.xmark-menu-item:hover,
+.xmark-menu-entry.is-open > .xmark-menu-item {
+  background: var(--vscode-menu-selectionBackground, #0078d4);
+  color: var(--vscode-menu-selectionForeground, #fff);
+}
+.xmark-menu-icon {
+  display: inline-flex;
+  flex: 0 0 20px;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  font-size: 21px;
+  line-height: 1;
+}
+.xmark-menu-icon svg { width: 17px; height: 17px; fill: currentColor; }
+.xmark-menu-label { flex: 1; }
+.xmark-menu-arrow { margin-left: auto; font-size: 24px; line-height: .7; }
+.xmark-menu-separator { height: 1px; margin: 4px; background: var(--vscode-menu-separatorBackground, rgba(255,255,255,.14)); }
+.xmark-menu-entry { position: relative; }
+.xmark-submenu {
+  position: absolute;
+  top: -4px;
+  left: calc(100% + 4px);
+  width: max-content;
+  min-width: 224px;
+  max-width: min(360px, 75vw);
+  max-height: min(70vh, 460px);
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--vscode-menu-border, rgba(255,255,255,.08));
+  border-radius: 8px;
+  background: var(--vscode-menu-background, #252526);
+  color: var(--vscode-menu-foreground, #ccc);
+  box-shadow: 0 6px 18px rgba(0,0,0,.24), 0 1px 3px rgba(0,0,0,.16);
+}
+.xmark-submenu.opens-left { right: calc(100% + 4px); left: auto; }
+.xmark-menu-option { min-height: 32px; padding-left: 10px; }
+.xmark-menu-option.is-selected { background: var(--vscode-menu-selectionBackground, #094771); color: var(--vscode-menu-selectionForeground, #fff); }
+.xmark-menu-option.is-selected::after { content: "✓"; margin-left: auto; }
+.xmark-layout {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 12px;
+}
+.crossnote[data-for="preview"] { width: 100%; margin: 0; padding: 0; }
+.xmark-markdown { min-width: 0; padding: 12px; overflow-wrap: anywhere; font-size: 14px; line-height: 1.55; }
+.xmark-markdown h1 { font-size: 1.85em; line-height: 1.2; }
+.xmark-markdown h2 { font-size: 1.5em; line-height: 1.25; }
+.xmark-markdown h3 { font-size: 1.25em; line-height: 1.3; }
+.xmark-markdown h4 { font-size: 1.1em; line-height: 1.35; }
+.xmark-markdown h5, .xmark-markdown h6 { font-size: 1em; line-height: 1.4; }
+.xmark-markdown p { margin-bottom: 12px; }
+.xmark-markdown pre { padding: 10px 12px; font-size: 13px; }
+.xmark-markdown img { max-width: 100%; }
+.xmark-markdown pre { overflow: auto; }
+.xmark-markdown input[type="checkbox"] { margin-right: .45em; }
+.xmark-toc {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(256px, 85vw);
+  overflow: auto;
+  border-left: 1px solid var(--vscode-panel-border, rgba(128,128,128,.25));
+  background: var(--vscode-sideBar-background, var(--vscode-editor-background, #fff));
+  box-shadow: -6px 0 18px rgba(0,0,0,.12);
+}
+.xmark-toc[hidden] { display: none; }
+.xmark-toc-content { padding: 12px 8px; font-size: 12px; }
+.xmark-toc .md-toc { padding: 0; }
+.xmark-toc .md-toc-link-wrapper { margin: 0; padding: 0 0 0 8px; list-style: none; }
+.xmark-toc .md-toc-link-wrapper[data-level="1"] { padding-left: 20px; }
+.xmark-toc .md-toc-link-wrapper[data-level="2"] { padding-left: 32px; }
+.xmark-toc .md-toc-link-wrapper[data-level="3"] { padding-left: 44px; }
+.xmark-toc .md-toc-link-wrapper[data-level="4"] { padding-left: 56px; }
+.xmark-toc .md-toc-link-wrapper[data-level="5"] { padding-left: 68px; }
+.xmark-toc .md-toc-link { display: block; padding: 4px 8px; border-radius: 3px; color: var(--vscode-foreground, inherit); text-decoration: none; }
+.xmark-toc .md-toc-link:hover { background: var(--vscode-list-hoverBackground, rgba(128,128,128,.15)); }
+@media (max-width: 600px) {
+  .xmark-menu { width: min(264px, calc(100vw - 16px)); }
+  .xmark-submenu { min-width: min(224px, calc(100vw - 24px)); }
+  .xmark-markdown { padding: 12px; }
+}

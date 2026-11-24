@@ -1,0 +1,199 @@
+:root {
+  --xmark-alert-note: #0969da;
+  --xmark-alert-tip: #1a7f37;
+  --xmark-alert-important: #8250df;
+  --xmark-alert-warning: #9a6700;
+  --xmark-alert-danger: #cf222e;
+  --xmark-callout-background: rgba(0, 0, 0, 0.035);
+  --xmark-code-background: #f3f5f7;
+  --xmark-code-border: #d0d7de;
+}
+
+body[data-preview-theme='dark'] {
+  --xmark-alert-note: #79c0ff;
+  --xmark-alert-tip: #7ee787;
+  --xmark-alert-important: #d2a8ff;
+  --xmark-alert-warning: #e3b341;
+  --xmark-alert-danger: #ff7b72;
+  --xmark-callout-background: rgba(255, 255, 255, 0.06);
+  --xmark-code-background: #252a30;
+  --xmark-code-border: #3d444d;
+}
+
+.markdown-alert,
+.xmark-container {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--xmark-alert-note);
+  border-radius: 0 4px 4px 0;
+  background: var(--xmark-callout-background);
+  color: inherit;
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  color: var(--xmark-alert-note);
+  font-weight: 600;
+}
+
+.markdown-alert > p:last-child {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+.markdown-alert-note {
+  border-left-color: var(--xmark-alert-note);
+}
+
+.markdown-alert-tip {
+  border-left-color: var(--xmark-alert-tip);
+}
+
+.markdown-alert-tip .markdown-alert-title {
+  color: var(--xmark-alert-tip);
+}
+
+.markdown-alert-important {
+  border-left-color: var(--xmark-alert-important);
+}
+
+.markdown-alert-important .markdown-alert-title {
+  color: var(--xmark-alert-important);
+}
+
+.markdown-alert-warning {
+  border-left-color: var(--xmark-alert-warning);
+}
+
+.markdown-alert-warning .markdown-alert-title {
+  color: var(--xmark-alert-warning);
+}
+
+.markdown-alert-caution {
+  border-left-color: var(--xmark-alert-danger);
+}
+
+.markdown-alert-caution .markdown-alert-title {
+  color: var(--xmark-alert-danger);
+}
+
+.xmark-container-info,
+.xmark-container-note {
+  border-left-color: var(--xmark-alert-note);
+}
+
+.xmark-container-tip {
+  border-left-color: var(--xmark-alert-tip);
+}
+
+.xmark-container-warning {
+  border-left-color: var(--xmark-alert-warning);
+}
+
+.xmark-container-danger {
+  border-left-color: var(--xmark-alert-danger);
+}
+
+.xmark-container > :first-child,
+.xmark-container > :last-child {
+  margin-bottom: 0;
+}
+
+.xmark-code-block {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.xmark-code-block-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0;
+  padding: 4px;
+  overflow: hidden;
+  border: 1px solid var(--xmark-code-border);
+  border-radius: 6px;
+  background: var(--xmark-code-background);
+}
+
+.xmark-code-block-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 28px;
+  margin: 0 0 4px;
+  padding: 0 4px;
+}
+
+.xmark-code-language {
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.xmark-copy-code,
+.xmark-run-code {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--xmark-code-border);
+  border-radius: 4px;
+  background: var(--xmark-code-background);
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.xmark-copy-code {
+  margin-left: auto;
+}
+
+.xmark-run-code {
+  margin-left: auto;
+}
+
+.xmark-run-code + .xmark-copy-code {
+  margin-left: 0;
+}
+
+html body .markdown-preview pre.xmark-code-block {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.xmark-code-block-container:hover .xmark-copy-code,
+.xmark-code-block-container:hover .xmark-run-code,
+.xmark-copy-code:focus-visible,
+.xmark-run-code:focus-visible,
+.xmark-copy-code:disabled {
+  opacity: 1;
+}
+
+.xmark-copy-code:disabled,
+.xmark-run-code:disabled {
+  cursor: default;
+}
+
+.xmark-code-block > code.hljs {
+  border-radius: 4px;
+}
+
+body .markdown-preview blockquote {
+  padding: 12px 16px;
+}
