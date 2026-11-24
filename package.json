@@ -23,7 +23,7 @@
   "main": "./out/native/extension.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "build:icon": "magick -background none media/mpe.svg -resize 128x128 media/mpe.png",
+    "build:icon": "mkdir -p examples/assets && magick -background none media/mpe.svg -resize 128x128 media/mpe.png && magick -background none media/mpe.svg -resize 128x128 examples/assets/mpe.png",
     "package:extension": "mkdir -p dist && pnpm dlx @vscode/vsce package --no-dependencies --out dist/xmark-preview-$npm_package_version.vsix",
     "check:all": "pnpm check:eslint && pnpm check:prettier && pnpm check:tsc",
     "check:eslint": "eslint \"**/*\"",

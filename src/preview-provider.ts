@@ -457,6 +457,10 @@ export default class PreviewProvider implements vscode.WebviewViewProvider {
             return '&#39;';
         }
       });
+    markdown.renderer.rules.emoji = (emojiTokens, index) => {
+      const token = emojiTokens[index];
+      return `<span class="xmark-emoji" role="img" aria-label="${escapeHtml(token.markup)}">${escapeHtml(token.content)}</span>`;
+    };
     const headingText = (token: (typeof tokens)[number]) =>
       (token.children ?? [])
         .map((child) => {

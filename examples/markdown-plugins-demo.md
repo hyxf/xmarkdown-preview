@@ -43,7 +43,7 @@
 
 相对路径图片会从源文档所在目录解析：
 
-![xMark 扩展图标](../media/mpe.png)
+![xMark 扩展图标](assets/mpe.png)
 
 ## 表格
 
@@ -69,7 +69,13 @@ printf 'xMark preview demo\n'
 
 ## Emoji
 
-Emoji 短代码：`:sparkles:`、`:memo:`、`:rocket:`。
+| 短代码       | 预览效果   |
+| ------------ | ---------- |
+| `:sparkles:` | :sparkles: |
+| `:memo:`     | :memo:     |
+| `:rocket:`   | :rocket:   |
+
+短代码作为普通文本时会渲染为 Emoji；放在行内代码中的短代码会按原文显示。
 
 ## 任务列表
 
