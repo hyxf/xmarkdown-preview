@@ -1,7 +1,7 @@
 {
   "name": "xmark-preview",
   "displayName": "xMark",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "xMark is a lightweight VS Code Markdown preview powered by markdown-it.",
   "categories": [
     "Other"
