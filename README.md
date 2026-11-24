@@ -21,6 +21,10 @@ xMark 是一个轻量的 VS Code Markdown 预览扩展。它使用 [`markdown-it
 - `Ctrl+Shift+V`（macOS：`Cmd+Shift+V`）：打开预览。
 - `Ctrl+K V`（macOS：`Cmd+K V`）：在旁边打开预览。
 
+## 升级 xMark
+
+在命令面板运行 **xMark: Check for Updates** 可立即检查稳定版。默认情况下，扩展启动 15 秒后会自动检查，每 24 小时最多一次。可通过 `xmarkPreview.update.enabled` 关闭更新检查，或通过 `xmarkPreview.update.autoCheck` 关闭自动检查。发现新版本后可查看发布说明、稍后处理或忽略该版本；低于最低受支持版本时会要求升级。选择 **Upgrade Now** 后，xMark 会下载 VSIX、验证 SHA-256，并交由 VS Code 安装。
+
 同一文档在编辑器预览中重复执行命令时，会复用该文档已有的预览面板。文档内容更改后，打开的预览会自动更新。侧栏预览默认跟随当前活动的受支持文档；锁定侧栏后，切换编辑器不会更改侧栏正在预览的文档。侧栏标题栏还提供锁定或解锁、刷新、打开源文件以及将预览弹出到编辑器标签页的操作。
 
 ## 渲染与主题

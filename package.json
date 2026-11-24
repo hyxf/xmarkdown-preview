@@ -88,8 +88,27 @@
         "command": "markdown-preview-bill.popOutSidePanelPreviewToEditor",
         "title": "xMark: Open Preview in Editor Tab",
         "icon": "$(link-external)"
+      },
+      {
+        "command": "markdown-preview-bill.checkForUpdates",
+        "title": "xMark: Check for Updates"
       }
     ],
+    "configuration": {
+      "title": "xMark",
+      "properties": {
+        "xmarkPreview.update.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable xMark update checks."
+        },
+        "xmarkPreview.update.autoCheck": {
+          "type": "boolean",
+          "default": true,
+          "description": "Check for xMark updates after startup at most once every 24 hours."
+        }
+      }
+    },
     "keybindings": [
       {
         "command": "markdown-preview-bill.openPreviewToTheSide",
@@ -212,11 +231,13 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-emoji": "^3.1.0",
     "markdown-it-github-alerts": "^1.0.1",
-    "markdown-it-task-lists": "^2.1.1"
+    "markdown-it-task-lists": "^2.1.1",
+    "semver": "^7.8.6"
   },
   "devDependencies": {
     "@eslint/js": "^9",
     "@types/node": "^25.6.0",
+    "@types/semver": "^7.8.0",
     "@types/vscode": "1.82.0",
     "esbuild": "^0.25.0",
     "eslint": "^9",

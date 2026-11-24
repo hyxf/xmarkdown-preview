@@ -1,7 +1,9 @@
 import * as vscode from 'vscode';
 import PreviewProvider, { SIDE_PANEL_VIEW_ID } from './preview-provider';
+import { activateUpdateFeature } from './features/update/updateFeature';
 
 export function activate(context: vscode.ExtensionContext): void {
+  activateUpdateFeature(context);
   const previewProvider = new PreviewProvider(context);
   const viewOptions = { webviewOptions: { retainContextWhenHidden: true } };
 
