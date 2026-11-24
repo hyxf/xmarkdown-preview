@@ -9,3 +9,4 @@ pnpm-debug.log*
 .mimosa
 .v2c
 .video_agent
+dist
