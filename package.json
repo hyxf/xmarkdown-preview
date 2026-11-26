@@ -221,7 +221,7 @@
       "secondarySidebar": [
         {
           "id": "markdown-preview-bill-side-panel",
-          "title": "xMark Preview",
+          "title": "Markdown Preview",
           "icon": "media/side-panel-preview.svg"
         }
       ]
